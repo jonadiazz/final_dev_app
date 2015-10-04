@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = [
+	url(r'^', include('dev_app.urls')),
     	url(r'devp/', include('dev_app.urls')),
 	url(r'^admin/', admin.site.urls),
 ]
